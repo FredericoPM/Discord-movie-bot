@@ -15,6 +15,6 @@ bot.on('message', message => {
 
 bot.on('message', message =>{
     if(message.content.toLowerCase() === 'fred'){
-        message.channel.send('BOIOLA')
+        message.channel.send('lindo')
     }
 });
