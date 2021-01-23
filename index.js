@@ -8,13 +8,16 @@ bot.on('ready', () => {
 });
 
 bot.on('message', message => {
-    if(message.content.toLowerCase() === 'shutdown'){
-        message.channel.send('Shutting down...').then(() => bot.destroy());
-    }
-});
-
-bot.on('message', message =>{
-    if(message.content.toLowerCase() === 'fred'){
-        message.channel.send('lindo')
+    message.content = message.content.toLowerCase();
+    switch(message.content){
+        case '!break':
+            message.channel.send('Shutting down...').then(() => bot.destroy());
+        break;
+        case '!fred':
+            message.channel.send('lindo');
+        break;
+        case '!help':
+            message.channel.send('nem!');
+        break;
     }
 });
