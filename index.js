@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
+const getEmbed = require('./embed.js');
 const bot = new Discord.Client();
 const config = require("./config.json");
+
 bot.login(config.token);
 
 bot.on('ready', () => {
@@ -14,7 +16,7 @@ bot.on('message', message => {
             message.channel.send('Shutting down...').then(() => bot.destroy());
         break;
         case '!fred':
-            message.channel.send('lindo');
+            message.channel.send(getEmbed("FRED", "https://i.imgur.com/C2nPuMk.png"));
         break;
         case '!help':
             message.channel.send('nem!');
